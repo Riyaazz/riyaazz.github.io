@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" :data-theme="picoCssTheme" x-data="lehraPlayer">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lehra/Nagma Player</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-  <script type="module" crossorigin src="/assets/index-7S0-XZbt.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-vyD8PoPU.css">
+  <script type="module" crossorigin src="/assets/index-BQemf4up.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DEnwM8ZE.css">
 </head>
 <body>
-<main class="container" x-data="lehraPlayer">
-    <h1 class="lehra-title"><img src="/static/logo.png" alt="Lehra/Nagma Player" style="height:1.2em;vertical-align:middle;"> Lehra/Nagma</h1>
+<main class="container">
+    <header style="text-align: center;">
+    <img src="/static/logo.png" alt="Lehra/Nagma Player" style="height:4.2em;">
+    <h4>Lehra/Nagma Player</h4>
     <p>A simple player for practicing with Lehra/Nagma, with pitch and tempo controls.</p>
-
+    </header>
     <div class="grid">
         <!-- Taal Selection as Button Group -->
         <div>
             <label for="taal-group">Select Taal</label>
             <div id="taal-group">
                 <template x-for="taal in availableTaals" :key="taal">
-                    <button
-                            @click="selectedTaal = taal"
+                    <button @click="selectedTaal = taal"
                             :class="selectedTaal === taal ? '' : 'secondary'"
                             :disabled="isLoading"
                             x-text="taal.charAt(0).toUpperCase() + taal.slice(1)">
@@ -33,8 +34,7 @@
             <label for="instrument-group">Select Instrument</label>
             <div id="instrument-group">
                 <template x-for="instrument in availableInstruments" :key="instrument">
-                    <button
-                            @click="selectedInstrument = instrument"
+                    <button @click="selectedInstrument = instrument"
                             :class="selectedInstrument === instrument ? '' : 'secondary'"
                             :disabled="isLoading"
                             x-text="instrument.charAt(0).toUpperCase() + instrument.slice(1)">
@@ -44,48 +44,43 @@
         </div>
     </div>
 
+    <div class="grid" style="margin-top:1.5em;">
     <!-- Track Dropdown -->
-    <label for="lehraSelect">Select Lehra Track</label>
-    <select id="lehraSelect" x-model="selectedTrackFile" :disabled="isLoading">
+        <div>
+    <label for="trackSelect">Select Lehra Track</label>
+
+    <select id="trackSelect" x-model="selectedTrackFile" :disabled="isLoading">
         <template x-if="tracks.length > 0">
             <template x-for="track in filteredTracks" :key="track.file">
                 <option :value="track.file" x-text="track.label"></option>
             </template>
         </template>
     </select>
-
+        </div>
+    </div>
     <!-- Track Details -->
-    <div class="grid" x-show="selectedTrackFile">
-        <div>
-            <p><strong>Original Scale:</strong> <span x-text="baseScale"></span></p>
-        </div>
-        <div>
-            <p><strong>Original BPM:</strong> <span x-text="originalBPM"></span></p>
-        </div>
-    </div>
-
-    <!-- Main Controls -->
-    <div class="controls">
-        <button @click="togglePlayPause()" :disabled="isLoading || !selectedTrackFile" class="contrast">
-            <span x-show="!isPlaying">Play</span>
-            <span x-show="isPlaying">Pause</span>
-        </button>
-    </div>
-
     <!-- Timeline -->
-    <label for="progress">Progress</label>
-    <progress id="progress" max="100" x-bind:value="progress"></progress>
+    <!--<label for="progress">Progress</label>
+    <progress id="progress" max="100" x-bind:value="progress"></progress>-->
 
     <!-- Advanced Controls -->
-    <div class="grid">
-        <div>
-            <label for="bpm">BPM: <span x-text="bpm"></span></label>
-            <input type="range" id="bpm" min="40" max="400" x-model.number="bpm" :disabled="isLoading">
-        </div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr;">
         <div>
             <label for="pitch">Scale: <span x-text="currentPitchName"></span></label>
             <input type="range" id="pitch" min="-6" max="6" x-model.number="semitoneOffset" :disabled="isLoading">
         </div>
+        <div>
+            <label for="bpm">BPM: <span x-text="bpm"></span></label>
+            <input type="range" id="bpm" min="40" max="400" x-model.number="bpm" :disabled="isLoading">
+        </div>
+    </div>
+
+    <div class="controls">
+        <button @click="togglePlayPause()" :aria-busy="isLoading" :disabled="isLoading || !selectedTrackFile" class="primary">
+            <span x-show="!isLoading && !isPlaying">Play</span>
+            <span x-show="!isLoading && isPlaying">Pause</span>
+            <span x-show="isLoading">Please Wait...</span>
+        </button>
     </div>
 
     <hr>
