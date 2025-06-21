@@ -1,0 +1,218 @@
+[
+  {
+    "file": "teentaal_santoor_bhairav_65bpm.mp3",
+    "label": "Raag Bhairav Santoor",
+    "taal": "teentaal",
+    "instrument": "santoor",
+    "scale": "C",
+    "bpm": 65
+  },
+  {
+    "file": "teentaal_santoor_140bpm.mp3",
+    "label": "Teentaal on Santoor",
+    "taal": "teentaal",
+    "instrument": "santoor",
+    "scale": "C#",
+    "bpm": 140
+  },
+  {
+    "file": "teentaal_sitar.mp3",
+    "label": "Teentaal on Sitar (110 BPM)",
+    "taal": "teentaal",
+    "instrument": "sitar",
+    "bpm": 110,
+    "scale": "C#"
+  },
+  {
+    "file": "teentaal_sitar_vilambit.mp3",
+    "label": "Teentaal on Sitar (Vilambit) (60 BPM)",
+    "taal": "teentaal",
+    "instrument": "sitar",
+    "bpm": 60,
+    "scale": "C#"
+  },
+  {
+    "file": "teentaal_sarangi.mp3",
+    "label": "Teentaal on Sarangi (65 BPM)",
+    "taal": "teentaal",
+    "instrument": "sarangi",
+    "bpm": 65,
+    "scale": "G#"
+  },
+  {
+    "file": "teentaal_sarod.mp3",
+    "label": "Teentaal on Sarod (95 BPM)",
+    "taal": "teentaal",
+    "instrument": "sarod",
+    "bpm": 95,
+    "scale": "C"
+  },
+  {
+    "file": "teentaal_harmonium.mp3",
+    "label": "Teentaal on Harmonium (75 BPM)",
+    "taal": "teentaal",
+    "instrument": "harmonium",
+    "bpm": 75,
+    "scale": "D"
+  },
+  {
+    "file": "ektaal_santoor.mp3",
+    "label": "Ektaal on Santoor (92 BPM)",
+    "taal": "ektaal",
+    "instrument": "santoor",
+    "bpm": 92,
+    "scale": "A"
+  },
+  {
+    "file": "ektaal_sitar.mp3",
+    "label": "Ektaal on Sitar (78 BPM)",
+    "taal": "ektaal",
+    "instrument": "sitar",
+    "bpm": 78,
+    "scale": "C#"
+  },
+  {
+    "file": "ektaal_sarangi.mp3",
+    "label": "Ektaal on Sarangi (105 BPM)",
+    "taal": "ektaal",
+    "instrument": "sarangi",
+    "bpm": 105,
+    "scale": "F#"
+  },
+  {
+    "file": "ektaal_sarod.mp3",
+    "label": "Ektaal on Sarod (68 BPM)",
+    "taal": "ektaal",
+    "instrument": "sarod",
+    "bpm": 68,
+    "scale": "C"
+  },
+  {
+    "file": "ektaal_harmonium.mp3",
+    "label": "Ektaal on Harmonium (115 BPM)",
+    "taal": "ektaal",
+    "instrument": "harmonium",
+    "bpm": 115,
+    "scale": "A#"
+  },
+  {
+    "file": "roopak_santoor.mp3",
+    "label": "Roopak on Santoor (70 BPM)",
+    "taal": "roopak",
+    "instrument": "santoor",
+    "bpm": 70,
+    "scale": "G"
+  },
+  {
+    "file": "roopak_sitar.mp3",
+    "label": "Roopak on Sitar (100 BPM)",
+    "taal": "roopak",
+    "instrument": "sitar",
+    "bpm": 100,
+    "scale": "C#"
+  },
+  {
+    "file": "roopak_sarangi.mp3",
+    "label": "Roopak on Sarangi (85 BPM)",
+    "taal": "roopak",
+    "instrument": "sarangi",
+    "bpm": 85,
+    "scale": "F"
+  },
+  {
+    "file": "roopak_sarod.mp3",
+    "label": "Roopak on Sarod (118 BPM)",
+    "taal": "roopak",
+    "instrument": "sarod",
+    "bpm": 118,
+    "scale": "C"
+  },
+  {
+    "file": "roopak_harmonium.mp3",
+    "label": "Roopak on Harmonium (62 BPM)",
+    "taal": "roopak",
+    "instrument": "harmonium",
+    "bpm": 62,
+    "scale": "G#"
+  },
+  {
+    "file": "dhadra_santoor.mp3",
+    "label": "Dhadra on Santoor (98 BPM)",
+    "taal": "dhadra",
+    "instrument": "santoor",
+    "bpm": 98,
+    "scale": "A"
+  },
+  {
+    "file": "dhadra_sitar.mp3",
+    "label": "Dhadra on Sitar (72 BPM)",
+    "taal": "dhadra",
+    "instrument": "sitar",
+    "bpm": 72,
+    "scale": "D"
+  },
+  {
+    "file": "dhadra_sarangi.mp3",
+    "label": "Dhadra on Sarangi (108 BPM)",
+    "taal": "dhadra",
+    "instrument": "sarangi",
+    "bpm": 108,
+    "scale": "G"
+  },
+  {
+    "file": "dhadra_sarod.mp3",
+    "label": "Dhadra on Sarod (81 BPM)",
+    "taal": "dhadra",
+    "instrument": "sarod",
+    "bpm": 81,
+    "scale": "C"
+  },
+  {
+    "file": "dhadra_harmonium.mp3",
+    "label": "Dhadra on Harmonium (66 BPM)",
+    "taal": "dhadra",
+    "instrument": "harmonium",
+    "bpm": 66,
+    "scale": "A#"
+  },
+  {
+    "file": "jhaptaal_santoor.mp3",
+    "label": "Jhaptaal on Santoor (112 BPM)",
+    "taal": "jhaptaal",
+    "instrument": "santoor",
+    "bpm": 112,
+    "scale": "G#"
+  },
+  {
+    "file": "jhaptaal_sitar.mp3",
+    "label": "Jhaptaal on Sitar (88 BPM)",
+    "taal": "jhaptaal",
+    "instrument": "sitar",
+    "bpm": 88,
+    "scale": "C#"
+  },
+  {
+    "file": "jhaptaal_sarangi.mp3",
+    "label": "Jhaptaal on Sarangi (60 BPM)",
+    "taal": "jhaptaal",
+    "instrument": "sarangi",
+    "bpm": 60,
+    "scale": "F"
+  },
+  {
+    "file": "jhaptaal_sarod.mp3",
+    "label": "Jhaptaal on Sarod (90 BPM)",
+    "taal": "jhaptaal",
+    "instrument": "sarod",
+    "bpm": 90,
+    "scale": "C"
+  },
+  {
+    "file": "jhaptaal_harmonium.mp3",
+    "label": "Jhaptaal on Harmonium (120 BPM)",
+    "taal": "jhaptaal",
+    "instrument": "harmonium",
+    "bpm": 120,
+    "scale": "A#"
+  }
+]

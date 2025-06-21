@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lehra/Nagma Player</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+  <script type="module" crossorigin src="/assets/index-7S0-XZbt.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-vyD8PoPU.css">
+</head>
+<body>
+<main class="container" x-data="lehraPlayer">
+    <h1 class="lehra-title"><img src="/static/logo.png" alt="Lehra/Nagma Player" style="height:1.2em;vertical-align:middle;"> Lehra/Nagma</h1>
+    <p>A simple player for practicing with Lehra/Nagma, with pitch and tempo controls.</p>
+
+    <div class="grid">
+        <!-- Taal Selection as Button Group -->
+        <div>
+            <label for="taal-group">Select Taal</label>
+            <div id="taal-group">
+                <template x-for="taal in availableTaals" :key="taal">
+                    <button
+                            @click="selectedTaal = taal"
+                            :class="selectedTaal === taal ? '' : 'secondary'"
+                            :disabled="isLoading"
+                            x-text="taal.charAt(0).toUpperCase() + taal.slice(1)">
+                    </button>
+                </template>
+            </div>
+        </div>
+        <!-- Instrument Selection -->
+        <div>
+            <label for="instrument-group">Select Instrument</label>
+            <div id="instrument-group">
+                <template x-for="instrument in availableInstruments" :key="instrument">
+                    <button
+                            @click="selectedInstrument = instrument"
+                            :class="selectedInstrument === instrument ? '' : 'secondary'"
+                            :disabled="isLoading"
+                            x-text="instrument.charAt(0).toUpperCase() + instrument.slice(1)">
+                    </button>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Track Dropdown -->
+    <label for="lehraSelect">Select Lehra Track</label>
+    <select id="lehraSelect" x-model="selectedTrackFile" :disabled="isLoading">
+        <template x-if="tracks.length > 0">
+            <template x-for="track in filteredTracks" :key="track.file">
+                <option :value="track.file" x-text="track.label"></option>
+            </template>
+        </template>
+    </select>
+
+    <!-- Track Details -->
+    <div class="grid" x-show="selectedTrackFile">
+        <div>
+            <p><strong>Original Scale:</strong> <span x-text="baseScale"></span></p>
+        </div>
+        <div>
+            <p><strong>Original BPM:</strong> <span x-text="originalBPM"></span></p>
+        </div>
+    </div>
+
+    <!-- Main Controls -->
+    <div class="controls">
+        <button @click="togglePlayPause()" :disabled="isLoading || !selectedTrackFile" class="contrast">
+            <span x-show="!isPlaying">Play</span>
+            <span x-show="isPlaying">Pause</span>
+        </button>
+    </div>
+
+    <!-- Timeline -->
+    <label for="progress">Progress</label>
+    <progress id="progress" max="100" x-bind:value="progress"></progress>
+
+    <!-- Advanced Controls -->
+    <div class="grid">
+        <div>
+            <label for="bpm">BPM: <span x-text="bpm"></span></label>
+            <input type="range" id="bpm" min="40" max="400" x-model.number="bpm" :disabled="isLoading">
+        </div>
+        <div>
+            <label for="pitch">Scale: <span x-text="currentPitchName"></span></label>
+            <input type="range" id="pitch" min="-6" max="6" x-model.number="semitoneOffset" :disabled="isLoading">
+        </div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <details>
+            <summary>Disclaimers & Information</summary>
+            <ul>
+                <li>This application is under construction and may have some defects.</li>
+                <li>Only a limited set of Lehra/Nagma audio files are currently available. Other Taals and Instruments may use placeholder data.</li>
+                <li>The source and copyright status of the current MP3 files are unverified, as they have been converted from public sources.</li>
+                <li>If you have concerns about any content, please contact the team for review or removal.</li>
+                <li>This project is not affiliated with any official organization or institution.</li>
+                <li>The app is intended for educational and practice purposes only.</li>
+                <li>Please do not use this app for commercial purposes without proper licensing of the audio files.</li>
+                <li>The app is open-source, but the audio files may have their own copyright restrictions.</li>
+                <li>The app does not store any user data or track usage.</li>
+                <li>The app is provided "as is" without any warranties or guarantees.</li>
+                <li>The team reserves the right to modify or remove any content at any time.</li>
+                <li>The team is not responsible for any misuse or misrepresentation of the app or its content.</li>
+                <li>Please use the app responsibly and respect the rights of the original content creators.</li>
+                <li>The team is committed to maintaining a respectful and inclusive community around this project.</li>
+                <li>By using this app, you agree to the terms and conditions outlined above.</li>
+                <li>If you have any feedback or suggestions, please reach out to: <a href="mailto:riyaaz4result@gmail.com">riyaaz4result@gmail.com</a></li>
+            </ul>
+        </details>
+    </footer>
+
+</main>
+
+<footer class="sticky-footer">
+    Built with
+    <svg>
+        <use xlink:href="/static/icons.svg#icon-heart"></use>
+    </svg>
+</footer>
+
+</body>
+</html>
