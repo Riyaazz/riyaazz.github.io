@@ -1,112 +1,140 @@
 [
   {
+    "id": 1,
     "file": "teentaal_santoor_bhairav_65bpm.mp3",
     "label": "Santoor Raag Bhairav Vilambit 65BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "santoor",
     "scale": "C",
     "bpm": 65
   },
   {
+    "id": 2,
     "file": "teentaal_santoor_140bpm.mp3",
     "label": "Santoor Madhyalay 140BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "santoor",
     "scale": "C#",
     "bpm": 140
   },
   {
+    "id": 3,
     "file": "teentaal_sarangi_70bpm.mp3",
     "label": "Sarangi Vilambit 70BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sarangi",
     "bpm": 70,
     "scale": "C#"
   },
   {
+    "id": 4,
     "file": "teentaal_sarangi_120bpm.mp3",
     "label": "Sarangi Chandrakauns Madhyalay 120BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sarangi",
     "bpm": 120,
     "scale": "D"
   },
   {
+    "id": 5,
     "file": "teentaal_sarangi_240bpm.mp3",
     "label": "Sarangi Druth 240BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sarangi",
     "bpm": 240,
     "scale": "G"
   },
   {
+    "id": 6,
     "file": "teentaal_sitar_bhimpalasi_100bpm.mp3",
     "label": "Sitar Bhimpalasi 100BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sitar",
     "bpm": 100,
     "scale": "C#"
   },
   {
+    "id": 7,
     "file": "teentaal_sitar_bhimpalasi_120bpm.mp3",
     "label": "Sitar Bhimpalasi 120BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sitar",
     "bpm": 120,
     "scale": "C#"
   },
   {
+    "id": 8,
     "file": "teentaal_sitar_kalavati_120bpm.mp3",
     "label": "Sitar Kalavati Madhyyalay 120BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sitar",
     "bpm": 120,
     "scale": "C#"
   },
   {
+    "id": 9,
     "file": "teentaal_sitar_kalavati_180bpm.mp3",
     "label": "Sitar Kalavati Dhruth 180BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "sitar",
     "bpm": 180,
     "scale": "C#"
   },
   {
+    "id": 10,
     "file": "teentaal_flute_115bpm.mp3",
     "label": "Flute Bhairagi Madhyalay 115BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "flute",
     "bpm": 115,
     "scale": "E"
   },
   {
+    "id": 11,
     "file": "teentaal_harmonium_60bpm.mp3",
     "label": "Harmonium Vilambit 60BPM",
     "taal": "teentaal",
+    "beats": 16,
     "instrument": "harmonium",
     "bpm": 60,
     "scale": "C#"
   },
   {
+    "id": 12,
     "file": "jhaptaal_sitar_100bpm.mp3",
     "label": "Sitar Tilak Kamod 100BPM",
     "taal": "jhaptaal",
+    "beats": 10,
     "instrument": "sitar",
     "bpm": 100,
     "scale": "C#"
   },
   {
+    "id": 13,
     "file": "roopak_sitar_120bpm.mp3",
     "label": "Sitar Bhageshree 120BPM",
     "taal": "roopak",
+    "beats": 7,
     "instrument": "sitar",
     "bpm": 120,
     "scale": "C#"
   },
   {
+    "id": 14,
     "file": "keharwa_harmonium_80bpm.mp3",
     "label": "Harmonium Jhinjhoti 80BPM",
     "taal": "keharwa",
+    "beats": 8,
     "instrument": "harmonium",
     "bpm": 80,
     "scale": "C#"
