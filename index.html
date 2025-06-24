@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" :data-theme="dark ? 'dark': 'light'" x-data="{ dark: $persist(true) }">
+<html lang="en" :data-theme="dark ? 'dark': 'light'" x-data="{ dark: $persist(true), tracks: $persist([]) }">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riyaazz</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-  <script type="module" crossorigin src="/assets/index-CSCT5cV6.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Doq4VZ-1.css">
+  <script type="module" crossorigin src="/assets/index-B9d2uAjC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DUk8Dech.css">
 </head>
 <body>
 <header id="header" up-defer up-href="templates/header.html"></header>
@@ -42,8 +43,7 @@
             <ul id="trackSelect">
                 <template x-if="tracks.length > 0">
                     <template x-for="track in filteredTracks" :key="track.id">
-                        <p><a up-follow up-transition="move-left" up-duration="1000" :href="'/player.html?id=' + track.id" :value="track.file" x-text="track.label"></a></p>
-                        <hr>
+                        <li><a up-follow up-transition="move-left" up-duration="500" :href="'/player.html?id=' + track.id" :value="track.id" x-text="track.label"></a></li>
                     </template>
                 </template>
             </ul>
