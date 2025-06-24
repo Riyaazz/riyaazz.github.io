@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" :data-theme="picoCssTheme" x-data="lehraPlayer">
+<html lang="en" :data-theme="dark ? 'dark': 'light'" x-data="{ dark: $persist(true) }">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lehra/Nagma Player</title>
+    <title>Riyaazz</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
-  <script type="module" crossorigin src="/assets/index-Cmk8QMM9.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DEnwM8ZE.css">
+  <script type="module" crossorigin src="/assets/index-CSCT5cV6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Doq4VZ-1.css">
 </head>
 <body>
+<header id="header" up-defer up-href="templates/header.html"></header>
 <main class="container">
-    <header style="text-align: center;">
-    <img src="/static/logo.png" alt="Lehra/Nagma Player" style="height:4.2em;">
-    <h4>Lehra/Nagma Player</h4>
-    <p>A simple player for practicing with Lehra/Nagma, with pitch and tempo controls.</p>
-    </header>
-    <div class="grid">
+    <div x-data="tracks">
         <!-- Taal Selection as Button Group -->
         <div>
             <label for="taal-group">Select Taal</label>
@@ -23,7 +18,6 @@
                 <template x-for="taal in availableTaals" :key="taal">
                     <button @click="selectedTaal = taal"
                             :class="selectedTaal === taal ? '' : 'secondary'"
-                            :disabled="isLoading"
                             x-text="taal.charAt(0).toUpperCase() + taal.slice(1)">
                     </button>
                 </template>
@@ -36,87 +30,26 @@
                 <template x-for="instrument in availableInstruments" :key="instrument">
                     <button @click="selectedInstrument = instrument"
                             :class="selectedInstrument === instrument ? '' : 'secondary'"
-                            :disabled="isLoading"
                             x-text="instrument.charAt(0).toUpperCase() + instrument.slice(1)">
                     </button>
                 </template>
             </div>
         </div>
-    </div>
 
-    <div class="grid" style="margin-top:1.5em;">
-    <!-- Track Dropdown -->
         <div>
-    <label for="trackSelect">Select Lehra Track</label>
+            <label for="trackSelect">Select Lehra Track</label>
 
-    <select id="trackSelect" x-model="selectedTrackFile" :disabled="isLoading">
-        <template x-if="tracks.length > 0">
-            <template x-for="track in filteredTracks" :key="track.file">
-                <option :value="track.file" x-text="track.label"></option>
-            </template>
-        </template>
-    </select>
-        </div>
-    </div>
-    <!-- Track Details -->
-    <!-- Timeline -->
-    <!--<label for="progress">Progress</label>
-    <progress id="progress" max="100" x-bind:value="progress"></progress>-->
-
-    <!-- Advanced Controls -->
-    <div class="grid" style="grid-template-columns: 1fr 1fr;">
-        <div>
-            <label for="pitch">Scale: <span x-text="currentPitchName"></span></label>
-            <input type="range" id="pitch" min="-6" max="6" x-model.number="semitoneOffset" :disabled="isLoading">
-        </div>
-        <div>
-            <label for="bpm">BPM: <span x-text="bpm"></span></label>
-            <input type="range" id="bpm" min="40" max="400" x-model.number="bpm" :disabled="isLoading">
-        </div>
-    </div>
-
-    <div class="controls">
-        <button @click="togglePlayPause()" :aria-busy="isLoading" :disabled="isLoading || !selectedTrackFile" class="primary">
-            <span x-show="!isLoading && !isPlaying">Play</span>
-            <span x-show="!isLoading && isPlaying">Pause</span>
-            <span x-show="isLoading">Please Wait...</span>
-        </button>
-    </div>
-
-    <hr>
-
-    <footer>
-        <details>
-            <summary>Disclaimers & Information</summary>
-            <ul>
-                <li>This application is under construction and may have some defects.</li>
-                <li>Only a limited set of Lehra/Nagma audio files are currently available. Other Taals and Instruments may use placeholder data.</li>
-                <li>The source and copyright status of the current MP3 files are unverified, as they have been converted from public sources.</li>
-                <li>If you have concerns about any content, please contact the team for review or removal.</li>
-                <li>This project is not affiliated with any official organization or institution.</li>
-                <li>The app is intended for educational and practice purposes only.</li>
-                <li>Please do not use this app for commercial purposes without proper licensing of the audio files.</li>
-                <li>The app is open-source, but the audio files may have their own copyright restrictions.</li>
-                <li>The app does not store any user data or track usage.</li>
-                <li>The app is provided "as is" without any warranties or guarantees.</li>
-                <li>The team reserves the right to modify or remove any content at any time.</li>
-                <li>The team is not responsible for any misuse or misrepresentation of the app or its content.</li>
-                <li>Please use the app responsibly and respect the rights of the original content creators.</li>
-                <li>The team is committed to maintaining a respectful and inclusive community around this project.</li>
-                <li>By using this app, you agree to the terms and conditions outlined above.</li>
-                <li>If you have any feedback or suggestions, please reach out to: <a href="mailto:riyaaz4result@gmail.com">riyaaz4result@gmail.com</a></li>
+            <ul id="trackSelect">
+                <template x-if="tracks.length > 0">
+                    <template x-for="track in filteredTracks" :key="track.id">
+                        <p><a up-follow up-transition="move-left" up-duration="1000" :href="'/player.html?id=' + track.id" :value="track.file" x-text="track.label"></a></p>
+                        <hr>
+                    </template>
+                </template>
             </ul>
-        </details>
-    </footer>
-
+        </div>
+    </div>
 </main>
-
-<footer class="sticky-footer">
-    Built with
-    <svg><use xlink:href="/static/icons.svg#icon-heart"></use></svg>
-    &nbsp;|&nbsp;
-    <a href="https://github.com/riyaazz/riyaazz-app" target="_blank" rel="noopener">View on GitHub</a>
-</footer>
-
+<footer class="sticky-footer" up-defer up-href="templates/footer.html"></footer>
 </body>
 </html>
