@@ -3,19 +3,17 @@ const APP_SHELL_URLS = [
     '/',
     '/index.html',
     '/player.html',
-    '/src/app.js',
-    '/src/styles.css',
-    '/src/toast.js',
-    '/src/utils.js',
-    '/src/components/playerPage.js',
-    '/src/components/tracks.js',
-    '/public/tracks.json',
-    '/public/templates/header.html',
-    '/public/templates/footer.html',
-    '/public/templates/disclaimers.html',
-    '/public/static/logo.png',
-    '/public/static/icons.svg',
-    '/public/static/favicon.ico'
+    '/tracks.json',
+    '/templates/header.html',
+    '/templates/footer.html',
+    '/templates/disclaimers.html',
+    '/static/logo.png',
+    '/static/icons.svg',
+    '/static/favicon.ico',
+    // If you have built JS/CSS files, add them here, e.g. '/assets/app.js'
+    '/assets/index-ea2Ft1aR.js',
+    '/assets/index-Cvny4KXv.js',
+    '/assets/index-Cja-oDbr.css'
 ];
 
 self.addEventListener('install', (event) => {
@@ -71,4 +69,4 @@ self.addEventListener('fetch', (event) => {
             return caches.match(event.request);
         })
     );
-}); 
+});
